@@ -1,0 +1,9 @@
+NLTK's inbuilt word_tokenize() [uses TreebankWordTokenizer ] and Book's tokenizer both use different tokenizers internally.
+
+NLTK's tokenizer splits words based on special characters. 
+For example semicolon ":" in a URL like https://www.google.com gets split into ['https', ':', '//www.goo-gle.com']
+
+Other special characters that gets split by word_tokenize() include ! @ # $ % &
+
+Book's own tokenizer i.e. words() does NOT split words based on special characters that are mentioned above.
+Book's own tokenizer has also been manually cleaned upon - as mentioned by NLTK's docs.

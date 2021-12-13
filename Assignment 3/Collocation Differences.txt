@@ -1,0 +1,22 @@
+With "semeval-2017-train.csv" dataset, both the PMI and Maximum likelihood ratio methods were applied to find significant collocations.
+
+With reference to output samples (below):
+
+* PMI - ince special characters like '!' were not filtered out and have appeared most together in text, PMI considered those while maximum likelihood has not given similar weightage to such special characters
+
+* PMI seems to give higher weightage if words were uppercased. Maximum likelihood ratio does not seem to take this factor into account.
+
+* Maximum likelihood ratio - looks at words that appear together (one token following another token) whereas PMI considers then occurances
+
+* The Bigrams / Trigrams that Maximum likelihood has selected were occuring many times in the corpus (high frequency). PMI has not selected based on frequency- for ex. PMI has picked up ('22nd', 'BIRTHDAY', 'Kendall') from the tweet ("HAPPY 22nd BIRTHDAY Kendall Francis Schmidt ! I love you forever ! Rushers will always be here for u . God bless . Mwah mwah : * HeffronDrive")  
+But this is the only occurance of that particular trigram.
+
+-----OUTPUT SAMPLES------
+
+With PMI, Top-10 Bi-grams from positive sentiment samples [("'one_thousand", 'suppositional'), ('*fingerbreadth', 'traverse*'), ('*fingers', 'crossed*'), ('-D', 'EmmaBanfield4'), ('-GEORDIE', 'FOAM'), ('0.12', 'ON'), ('101', '%'), ('22nd', 'BIRTHDAY'), ('27', 'TWEET/RT'), ('3-6', 'PST/6-9')]
+
+With PMI, Top-10 Tri-grams from positive sentiment samples [('-GEORDIE', 'FOAM', 'PARTY'), ('0.12', 'ON', 'IOS'), ('22nd', 'BIRTHDAY', 'Kendall'), ('27', 'TWEET/RT', 'BTRonPCAs'), ('3-6', 'PST/6-9', 'EST'), ('4:00pm', 'ITS', 'HER'), ('930Club', 'uhalldc', 'bensollee'), ('Annual', 'Dinner', 'closes'), ('BIRTHDAY', 'Kendall', 'Francis'), ('BUCK', 'UP', 'BOO\\u2019S')]
+
+With Maximum likelihood ratio, Top-10 Bi-grams from positive sentiment samples [('!', '!'), ('Ice', 'Cube'), ('Janet', 'Jackson'), ('Venice', 'Beach'), ('Lady', 'Gaga'), (':', ')'), ('gon', 'na'), ('I', 'am'), ('I', "'m"), ('SO', 'MUCH')]
+
+With Maximum likelihood ratio, Top-10 Tri-grams from positive sentiment samples [('!', '!', '!'), ('!', '!', 'Lol'), ('!', '!', 'Cya'), ('!', '!', 'JanetJackson'), ('there', '!', '!'), ('!', '!', 'byun100'), ('LOL', '!', '!'), ('!', '!', 'U'), ('!', '!', 'free'), ('!', '!', 'This')]

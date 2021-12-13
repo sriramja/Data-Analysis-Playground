@@ -1,0 +1,10 @@
+Comparing the custom tokenizer I have created with the NLTK's word_tokenize()
+
+First, NLTK's word_tokenize() splits each word into tokens, considering special characters as tokens. They only take syntax into account.
+
+NLTK will split - For instance words like " movin' ", " trippin' ", " jumpin' " into 2 tokens namely <first-word-part> and <'> respectively.
+Other words like " don't ", " would've " will be split into 3 - <first-part>, <'>, <'ve or 't> respectively.
+
+The created custom tokenizer is RegEx based. It is designed to take some semantics into consideration and understands <'> separately as a special character is different from when it is used in a word. It also understands which token to associate the <'> with.
+For instance - "would've" will be split into <would> and <'ve>. Words like jumpin' will be considered a single token. 
+This makes more sense to retain word's meaning when doing NLTK

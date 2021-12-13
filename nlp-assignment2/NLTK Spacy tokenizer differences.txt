@@ -1,0 +1,15 @@
+NLTK vs Spacy  - Tokenizer differences
+
+Both the libraries output the following
+Spacy - 185755 words 
+NLTK's word_tokenize - 184679 words
+
+NLTK's tokenizer splits some special characters like :(colon) inside URL where as spacy (en_core_web_sm model) does not.
+
+For instance, string "https://www.abcxyz.com - that is a 'cool' website" gets split into 10 tokens i.e. 
+['https', ':', '//www.abcxyz.com', '-', 'that', 'is', 'a', "'cool", "'", 'website']
+whereas spacy's tokenizer splits it into 9 sentences
+['https//www.abcxyz.com', '-', 'that', 'is', 'a', "'cool", "'", 'website']
+
+NLTK  does not recognize special object notation like \n and \t
+whereas spacy recognizes them and splits them into a token
